@@ -19,7 +19,7 @@
             android:name=".GameScreen"
             android:exported="true" />
         <activity
-            android:name=".CharcterSelection"
+            android:name=".CharacterSelection"
             android:exported="true" />
         <activity
             android:name=".CharacterCreation"

@@ -1,13 +1,24 @@
 package no.hiof.larsgh.rpgda;
 
+
+import android.os.Bundle;
 import android.view.View;
 
-public class Story {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Story extends AppCompatActivity {
 
     GameScreen gs;
     String nextPosition1, nextPosition2, nextPosition3, nextPosition4;
     boolean ironSword = false;
     boolean killGoblin = false;
+    private static Double exp = 0.0;
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+    }
 
     public Story(GameScreen gs){
 
@@ -29,9 +40,28 @@ public class Story {
         }
     }
 
+    /*public void getExp(){
+        exp += 50;
+
+        if (exp % 100 == 0){
+            playerLevelUp();
+        }
+    }*/
+
     public void showAllButtons(){
         gs.bOption1.setVisibility(View.VISIBLE);
         gs.bOption2.setVisibility(View.VISIBLE);
+        gs.bOption3.setVisibility(View.VISIBLE);
+        gs.bOption4.setVisibility(View.VISIBLE);
+    }
+
+    public void dontShowThreeButtons(){
+        gs.bOption2.setVisibility(View.VISIBLE);
+        gs.bOption3.setVisibility(View.VISIBLE);
+        gs.bOption4.setVisibility(View.VISIBLE);
+    }
+
+    public void dontShowTwoButtons(){
         gs.bOption3.setVisibility(View.VISIBLE);
         gs.bOption4.setVisibility(View.VISIBLE);
     }
@@ -61,10 +91,8 @@ public class Story {
         gs.bOption2.setText("");
         gs.bOption3.setText("");
         gs.bOption4.setText("");
-        gs.bOption2.setVisibility(View.INVISIBLE);
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
 
+        dontShowThreeButtons();
 
         nextPosition1 = "startingPoint";
         nextPosition2 = "";
@@ -81,9 +109,7 @@ public class Story {
         gs.bOption3.setText("");
         gs.bOption4.setText("");
 
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
-
+        dontShowTwoButtons();
 
         nextPosition1 = "searchCorpse";
         nextPosition2 = "startingPoint";
@@ -101,10 +127,7 @@ public class Story {
         gs.bOption3.setText("");
         gs.bOption4.setText("");
 
-        gs.bOption2.setVisibility(View.INVISIBLE);
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
-
+        dontShowThreeButtons();
 
         nextPosition1 = "startingPoint";
         nextPosition2 = "";
@@ -123,8 +146,7 @@ public class Story {
             gs.bOption3.setText("");
             gs.bOption4.setText("");
 
-            gs.bOption3.setVisibility(View.INVISIBLE);
-            gs.bOption4.setVisibility(View.INVISIBLE);
+            dontShowTwoButtons();
 
             nextPosition1 = "fightGiantSnake";
             nextPosition2 = "startingPoint";
@@ -139,8 +161,7 @@ public class Story {
             gs.bOption3.setText("");
             gs.bOption4.setText("");
 
-            gs.bOption3.setVisibility(View.INVISIBLE);
-            gs.bOption4.setVisibility(View.INVISIBLE);
+            dontShowThreeButtons();
 
             nextPosition1 = "dead";
             nextPosition2 = "";
@@ -158,8 +179,7 @@ public class Story {
         gs.bOption3.setText("");
         gs.bOption4.setText("");
 
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
+        dontShowTwoButtons();
 
         nextPosition1 = "startingPoint";
         nextPosition2 = "goMenuScreen";
@@ -177,8 +197,7 @@ public class Story {
             gs.bOption3.setText("");
             gs.bOption4.setText("");
 
-            gs.bOption3.setVisibility(View.INVISIBLE);
-            gs.bOption4.setVisibility(View.INVISIBLE);
+            dontShowTwoButtons();
 
             nextPosition1 = "dead";
             nextPosition2 = "startingPoint";
@@ -192,8 +211,7 @@ public class Story {
             gs.bOption3.setText("");
             gs.bOption4.setText("");
 
-            gs.bOption3.setVisibility(View.INVISIBLE);
-            gs.bOption4.setVisibility(View.INVISIBLE);
+            dontShowTwoButtons();
 
             nextPosition1 = "fightGoblin";
             nextPosition2 = "startingPoint";
@@ -204,6 +222,7 @@ public class Story {
         }
 
     }
+
     public void fightGoblin(){
         gs.text.setText("You defeated the Gobling with your rusty sword!\n\nYou feel much stronger now!");
 
@@ -214,14 +233,15 @@ public class Story {
         gs.bOption3.setText("");
         gs.bOption4.setText("");
 
-        gs.bOption2.setVisibility(View.INVISIBLE);
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
+        dontShowThreeButtons();
 
         nextPosition1 = "startingPoint";
         nextPosition2 = "";
         nextPosition3 = "";
         nextPosition4 = "";
+
+        //getExp();
+
     }
 
     public void fightGiantSnake(){
@@ -232,13 +252,21 @@ public class Story {
         gs.bOption3.setText("");
         gs.bOption4.setText("");
 
-        gs.bOption2.setVisibility(View.INVISIBLE);
-        gs.bOption3.setVisibility(View.INVISIBLE);
-        gs.bOption4.setVisibility(View.INVISIBLE);
+        dontShowThreeButtons();
 
         nextPosition1 = "goMenuScreen";
         nextPosition2 = "";
         nextPosition3 = "";
         nextPosition4 = "";
+
+        //getExp();
     }
+
+    //when player level up, call methods from GameScreen
+    /*public void playerLevelUp(){
+        GameScreen gs = new GameScreen();
+        gs.levelUp();
+        gs.updateStat();
+    }*/
+
 }

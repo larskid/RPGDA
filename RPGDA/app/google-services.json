@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216202611985",
+    "project_id": "rpgda-25962",
+    "storage_bucket": "rpgda-25962.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216202611985:android:91a79697ed36d86520d0b0",
+        "android_client_info": {
+          "package_name": "no.hiof.larsgh.rpgda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216202611985-9v6s0sg8qgdenuecvbnhv1fd6ccb6b5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBJqDUIO3zgN9L-8qq5zXV7jvNcY8BBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216202611985-9v6s0sg8qgdenuecvbnhv1fd6ccb6b5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

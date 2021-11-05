@@ -73,8 +73,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsMenuButton"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintTop_toBottomOf="@+id/deletExsistingSaveButton"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/deletExsistingSaveButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="15dp"
+        android:onClick="backTitleScreen"
+        android:text="Delete character"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsMenuButton" />
 
     <TextView
         android:id="@+id/underTitleMenu"
