@@ -59,6 +59,8 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
     boolean cr1DiscoverBody;
     boolean skeletonSneakAttack;
     boolean doorKey;
+    boolean secretDoor;
+    boolean healingFountain;
 
     PlayerWeapon weapon = new PlayerWeapon();
     FightingMonster monster = new FightingMonster();
@@ -389,6 +391,7 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         cr1DiscoverBody  = getStat.getBoolean("cr1DiscoverBody ",false);
         skeletonSneakAttack  = getStat.getBoolean("skeletonSneakAttack ",false);
         doorKey = getStat.getBoolean("doorKey", false);
+        secretDoor = getStat.getBoolean("secretDoor", false);
 
         getNameLevelHP(tvUserLevel, tvUserHP, tvUserWeapon);
     }
@@ -420,6 +423,7 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
         editor.putBoolean("cr1DiscoverBody", cr1DiscoverBody);
         editor.putBoolean("skeletonSneakAttack", skeletonSneakAttack);
         editor.putBoolean("doorKey", doorKey);
+        editor.putBoolean("secretDoor", secretDoor);
         editor.commit();
 
         getNameLevelHP(tvUserLevel, tvUserHP, tvUserWeapon);
@@ -923,7 +927,7 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
 
     public void cr2FightSkeleton(){
         if (skeletonSneakAttack){
-            text.setText(monster.name + ": " + monster.hp + "\n\n What do you do?");
+            text.setText(monster.name + ": " + monster.hp);
             bOption1.setText(">");
             bOption2.setText("");
             bOption3.setText("");
@@ -1038,26 +1042,44 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
 
         nextPosition1 = "cr3DoorTrap";
         nextPosition2 = "cr3DoorTrap";
-        nextPosition3 = "cr3SecretRom";
+        nextPosition3 = "cr3SecretRoom";
         nextPosition4 = "cr3Forward";
     }
 
     public void cr3SecretRoom(){
-        text.setText("You managed to open the iron door. You enter the room. Inside the room you see an altar in the middle of the room, up on the altar you see a sword from which comes a blue light that lights up the room.\n\n (You found a Magic Sword!)");
+        if (!secretDoor) {
+            text.setText("You managed to open the iron door. You enter the room. Inside the room you see an altar in the middle of the room, up on the altar you see a sword from which comes a blue light that lights up the room.\n\n (You found a Magic Sword!)");
+            secretDoor = true;
+            weapon = new Weapon_MagicSword();
+            weaponUpdate();
+            updateStat();
 
-        weapon = new Weapon_MagicSword();
-        weaponUpdate();
+            showOneButton();
+            bOption1.setText("Back");
+            bOption2.setText("");
+            bOption3.setText("");
+            bOption4.setText("");
 
-        showOneButton();
-        bOption1.setText("Back");
-        bOption2.setText("");
-        bOption3.setText("");
-        bOption4.setText("");
+            nextPosition1 = "thirdCrossroad";
+            nextPosition2 = "";
+            nextPosition3 = "";
+            nextPosition4 = "";
+        }
+        else if (secretDoor){
+            text.setText("You managed to open the iron door. You enter the room. Inside the room you see an altar in the middle of the room, but nothing more.");
 
-        nextPosition1 = "thirdCrossroad";
-        nextPosition2 = "";
-        nextPosition3 = "";
-        nextPosition4 = "";
+            showOneButton();
+            bOption1.setText("Back");
+            bOption2.setText("");
+            bOption3.setText("");
+            bOption4.setText("");
+
+            nextPosition1 = "thirdCrossroad";
+            nextPosition2 = "";
+            nextPosition3 = "";
+            nextPosition4 = "";
+        }
+
     }
 
     public void cr3DoorTrap(){
@@ -1138,20 +1160,38 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
     }
 
     public void bossAreaHealing(){
-        hp = hp + 60;
-        text.setText("The Healing fountain healed you for 60 HP!");
-        updateStat();
+        if (!healingFountain){
+            hp = hp + 60;
+            text.setText("The Healing fountain healed you for 60 HP!");
+            healingFountain = true;
+            updateStat();
 
-        bOption1.setText("Back");
-        bOption2.setText("");
-        bOption3.setText("");
-        bOption4.setText("");
-        showOneButton();
+            bOption1.setText("Back");
+            bOption2.setText("");
+            bOption3.setText("");
+            bOption4.setText("");
+            showOneButton();
 
-        nextPosition1 = "bossArea";
-        nextPosition2 = "";
-        nextPosition3 = "";
-        nextPosition4 = "";
+            nextPosition1 = "bossArea";
+            nextPosition2 = "";
+            nextPosition3 = "";
+            nextPosition4 = "";
+        }
+        else {
+            text.setText("The Healing fountain can' heal you anymore!");
+
+            bOption1.setText("Back");
+            bOption2.setText("");
+            bOption3.setText("");
+            bOption4.setText("");
+            showOneButton();
+
+            nextPosition1 = "bossArea";
+            nextPosition2 = "";
+            nextPosition3 = "";
+            nextPosition4 = "";
+        }
+
     }
 
     public void bossAreaImage(){
@@ -1268,6 +1308,8 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                     nextPosition4 = "";
                     break;
                 case "Skeleton":
+                    skeletonSneakAttack = false;
+                    updateStat();
                     nextPosition1 = "cr2FightSkeleton";
                     nextPosition2 = "";
                     nextPosition3 = "";
@@ -1365,6 +1407,7 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
                 nextPosition4 = "";
                 break;
             case "Dragon":
+                text.setText("You defeated the " + monster.name + "!)");
                 killDragon = true;
                 updateStat();
                 nextPosition1 = "bossFightDragon";
@@ -1376,8 +1419,8 @@ public class GameScreen extends AppCompatActivity implements PopupMenu.OnMenuIte
     }
 
     public void ending(){
-        text.setText("You have defeated the last boss the mighty Dragon!\n You have become a true hero!\n\n<THE END>");
-
+        text.setText("You have defeated the last boss the mighty Dragon!\n You have become a true hero!\n\n<THE END> \n\n (Character will be deleted)");
+        characterDelete();
         bOption1.setText("Finish");
         bOption2.setText("");
         bOption3.setText("");

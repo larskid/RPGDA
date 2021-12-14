@@ -4,7 +4,7 @@ public class Monster_Dragon extends FightingMonster {
 
     public Monster_Dragon(){
         name = "Dragon";
-        hp = 150;
-        attack = 40;
+        hp = 200;
+        attack = 60;
     }
 }
