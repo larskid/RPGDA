@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_blue"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Player stat"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:background="@drawable/textview_character_stat" >
+
+            <TableRow android:paddingVertical="2dp"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/level"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cssLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start"
+                    android:text="@string/player_level"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:layout_marginBottom="10dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/character_name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:text="Weapon"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:id="@+id/cssWeaponName"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssWeaponDamage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="@string/base_stat"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:layout_width="149dp"
+                    android:text="@string/health_point_hp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssHP"
+                    android:layout_width="11dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:text="@string/damage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssDamage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:text="@string/intelligence"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssIntelligence"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:text="@string/stat_point_sp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssSP"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:text="@string/total_damage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cssTotalDamage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+        </TableLayout>
+
+
+        <Button
+            android:id="@+id/popupBackButtonPlayerStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/popup_menu_buttons"
+            android:text="Back"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</LinearLayout>

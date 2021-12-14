@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RPGDA</string>
-    <string name="editTextCCName">Enter name</string>
+    <string name="editTextCCName">Enter name here</string>
     <string name="editTextCCStartingWeapon">Choose weapon</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="option_1">Option 1</string>
@@ -10,7 +10,7 @@
     <string name="option_2">Option 2</string>
     <string name="option_3">Option 3</string>
     <string name="option_4">Option 4</string>
-    <string name="inventroy">Inventroy</string>
+    <string name="inventory">Inventory</string>
     <string name="character">Character</string>
     <string name="base_stat">Base stat</string>
     <string name="character_creation">Character Creation</string>
@@ -19,26 +19,26 @@
     <string name="mana_point_mp">Mana Point (MP):</string>
     <string name="strength">Strength:</string>
     <string name="_10">10</string>
-    <string name="intelligence">Intelligence</string>
+    <string name="intelligence">Intelligence:</string>
     <string name="agility">Agility</string>
     <string name="stat_point_sp">Stat point (SP):</string>
     <string name="confirm">Confirm</string>
     <string name="back">Back</string>
     <string name="level_1">Level 1</string>
-    <string name="character_name">Character name</string>
+    <string name="character_name">Character name:</string>
     <string name="level">Level</string>
     <string name="player_level">1</string>
     <string name="_0">0</string>
     <string name="game">Game</string>
     <string name="save">Save</string>
     <string name="quit">Quit</string>
+    <string name="damage">Damage:</string>
+    <string name="starting_weapon">Starting weapon:</string>
+    <string name="weapon_knife">Knife</string>
+    <string name="_5">5</string>
+    <string name="total_damage">Total damage:</string>
+    <string name="bNameInfoSettings">Info</string>
+    <string name="menu_info_description">RRPGDA is a text-based rpg game where the user creates their character who is going on a journey to explore new dungeons.\nThe user must fight monsters, find mysterious weapons and unlock puzzles to defeat the dungeon.\nYou will find weapons on the journey as well as the mysterious HP potion so you can survive longer.\nEach time you defeat a monster you will become stronger so you can better tackle the next monster.\nAnd do not forget the Stat Point (SP) that you can use to make your character even stronger.</string>
 
-    <string-array name="starter_weapon">
-        <item>Dagger</item>
-        <item>Long sword</item>
-        <item>Spear</item>
-        <item>Magic wand</item>
-        <item>Bow and arrow</item>
-    </string-array>
 
 </resources>

@@ -8,15 +8,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CharacterSelection extends AppCompatActivity {
 
-    TextView csName, csLevel, csHP, csMP, csStrength, csIntelligence, csAgility, csSP;
+    TextView csName, csLevel, csHP, csDamage, csIntelligence, csSP, csWeaponName, csWeaponDamage, csTotalDamage;
     public static final String DEFAULT = "N/A";
     public static final int zNum = 0;
-    int level, hp, mp, strength, intelligence, agility, sp;
-    String name;
+    int level, hp, damage, intelligence, sp, weaponDamage, totalDamage;
+    String name, weaponName;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -27,30 +26,35 @@ public class CharacterSelection extends AppCompatActivity {
         csName = (TextView)findViewById(R.id.csName);
         csLevel = (TextView)findViewById(R.id.csLevel);
         csHP = (TextView)findViewById(R.id.csHP);
-        csMP = (TextView)findViewById(R.id.csMP);
-        csStrength = (TextView)findViewById(R.id.csStrength);
+        csDamage = (TextView)findViewById(R.id.csStrength);
         csIntelligence = (TextView)findViewById(R.id.csIntelligence);
-        csAgility = (TextView)findViewById(R.id.csAgility);
         csSP = (TextView)findViewById(R.id.csSP);
+        csWeaponName = (TextView)findViewById(R.id.csWeaponName);
+        csWeaponDamage = (TextView)findViewById(R.id.csWeaponDamage);
+        csTotalDamage = (TextView)findViewById(R.id.csTotalDamage);
 
+        // Getting values from sharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("userStat", MODE_PRIVATE);
         name = sharedPreferences.getString("name", DEFAULT);
         level = sharedPreferences.getInt("level", zNum);
         hp = sharedPreferences.getInt("hp", zNum);
-        mp = sharedPreferences.getInt("mp", zNum);
-        strength = sharedPreferences.getInt("strength", zNum);
+        damage = sharedPreferences.getInt("damage", zNum);
         intelligence = sharedPreferences.getInt("intelligence", zNum);
-        agility = sharedPreferences.getInt("agility", zNum);
         sp = sharedPreferences.getInt("sp", zNum);
+        weaponName = sharedPreferences.getString("weaponName", weaponName);
+        weaponDamage = sharedPreferences.getInt("weaponDamage", weaponDamage);
+
+        totalDamage = damage + weaponDamage;
 
         csName.setText(name);
         csLevel.setText(Integer.toString(level));
         csHP.setText(Integer.toString(hp));
-        csMP.setText(Integer.toString(mp));
-        csStrength.setText(Integer.toString(strength));
+        csDamage.setText(Integer.toString(damage));
         csIntelligence.setText(Integer.toString(intelligence));
-        csAgility.setText(Integer.toString(agility));
         csSP.setText(Integer.toString(sp));
+        csWeaponName.setText(weaponName);
+        csWeaponDamage.setText(Integer.toString(weaponDamage));
+        csTotalDamage.setText(Integer.toString(totalDamage));
     }
 
 

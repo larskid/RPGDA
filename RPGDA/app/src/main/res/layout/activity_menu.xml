@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_blue"
     tools:context=".Menu">
 
     <TextView
         android:id="@+id/textViewMenuTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:text="RPG Dungeon Adventure"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -26,35 +25,38 @@
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="350dp"
+        android:background="@drawable/mybutton"
         android:onClick="goCCScreen"
         android:text="New game"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/underTitleMenu"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintTop_toBottomOf="@+id/underTitleMenu" />
 
     <Button
         android:id="@+id/loadGameButton"
+        android:background="@drawable/mybutton"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="15dp"
         android:onClick="goCSScreen"
         android:text="Load game"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newGameButton" />
 
     <Button
-        android:id="@+id/settingsMenuButton"
+        android:id="@+id/infoSettingsMenuButton"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="15dp"
-        android:text="Settings"
+        android:background="@drawable/mybutton"
+        android:text="@string/bNameInfoSettings"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -66,28 +68,30 @@
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="15dp"
+        android:background="@drawable/mybutton"
         android:onClick="backTitleScreen"
         android:text="Back"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deletExsistingSaveButton"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintTop_toBottomOf="@+id/deletExsistingSaveButton" />
 
     <Button
         android:id="@+id/deletExsistingSaveButton"
+        android:background="@drawable/mybutton"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="15dp"
         android:onClick="backTitleScreen"
         android:text="Delete character"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsMenuButton" />
+        app:layout_constraintTop_toBottomOf="@+id/infoSettingsMenuButton" />
 
     <TextView
         android:id="@+id/underTitleMenu"

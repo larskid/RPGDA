@@ -7,5 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_blue">#79B5DD</color>
+    
+    <color name="background_blue">#9BC8FF</color>
+    <color name="blue_dark">#6997CC</color>
+    <color name="blue_light">#CEFBFF</color>
+
+    <color name="brown">#CCB590</color>
+    <color name="brown_light">#FFE7C0</color>
+    <color name="brown_dark">#9A8562</color>
+
+    <color name="background_dark_blue">#506B8F</color>
+
+    <color name="Orange">#FD7B51</color>
+    
+    <color name="button_color_light_orange">#FA7B52</color>
+    <color name="button_choice_light_gray">#C5C5C5</color>
+    <color name="popup_info_setting">#D7E7FA</color>
+    <color name="tab_buttons">#DFDFDF</color>
+
+    <color name="button_color">#F1CD99</color>
 </resources>

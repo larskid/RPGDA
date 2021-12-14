@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_blue"
     tools:context=".CharacterCreation">
 
     <TextView
@@ -34,12 +33,10 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:background="#D5E6F1"
+        android:background="@drawable/textview_character_stat"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:paddingEnd="10dp"
@@ -49,7 +46,11 @@
         app:layout_constraintTop_toBottomOf="@+id/underTitleCC">
 
 
-        <TableRow android:layout_width="match_parent">
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textview_border"
+            android:layout_width="match_parent">
 
             <TextView
                 android:layout_width="match_parent"
@@ -62,36 +63,45 @@
 
             <TextView
                 android:id="@+id/playerLevel"
-                android:layout_width="match_parent"
+                android:layout_width="217dp"
                 android:layout_height="match_parent"
-                android:gravity="start"
-                android:text="@string/player_level"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+
         </TableRow>
 
-        <TableRow android:layout_marginBottom="10dp">
+        <TableRow
+            android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textview_border"
+            android:layout_width="match_parent">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
+                android:layout_height="match_parent"
                 android:text="@string/character_name"
                 android:textColor="@color/black"
+                android:gravity="center_vertical"
                 android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/csName"
-                android:layout_width="185dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_column="1"
-                android:background="#fff"
+                android:background="@drawable/textview_border"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                 android:hint="@string/editTextCCName"
+                android:inputType="textFilter"
                 android:padding="5dp"
                 android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
+            android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -104,7 +114,9 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="10dp">
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border">
 
             <TextView
                 android:text="@string/health_point_hp"
@@ -113,41 +125,30 @@
 
             <TextView
                 android:id="@+id/textHP"
-                android:layout_width="111dp"
-                android:text="@string/_100"
+                android:text="20"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="10dp">
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border">
 
             <TextView
-                android:text="@string/mana_point_mp"
+                android:text="@string/damage"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textMP"
-                android:text="@string/_100"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </TableRow>
-
-        <TableRow android:layout_marginTop="10dp">
-
-            <TextView
-                android:text="@string/strength"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textStrength"
-                android:text="@string/_10"
+                android:id="@+id/textDamage"
+                android:text="10"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="10dp">
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border">
 
             <TextView
                 android:text="@string/intelligence"
@@ -156,21 +157,57 @@
 
             <TextView
                 android:id="@+id/textIntelligence"
-                android:text="@string/_10"
+                android:text="5"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="10dp">
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border">
 
             <TextView
-                android:text="@string/agility"
+                android:text="@string/stat_point_sp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textAgility"
-                android:text="@string/_10"
+                android:id="@+id/textSP"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="@string/starting_weapon"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:paddingVertical="2dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/textview_border"
+            >
+
+            <TextView
+                android:id="@+id/starterWeaponName"
+                android:text="@string/weapon_knife"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textWeaponDamage"
+                android:text="3"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </TableRow>
@@ -179,25 +216,27 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/button_option"
         android:onClick="backMenuScreen"
         android:text="@string/back"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonConfirm"
-        android:layout_width="wrap_content"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
         android:allowUndo="true"
+        android:background="@drawable/button_option"
         android:text="@string/confirm"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

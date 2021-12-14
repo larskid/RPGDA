@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_blue"
+
     tools:context=".GameScreen">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gs_tab"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,8 +22,8 @@
             android:id="@+id/textViewGameScreenTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:background="@color/background_blue"
+            android:layout_weight="1.4"
+
             android:paddingTop="32dp"
             android:text="@string/rpg_dungeon_adventure"
             android:textAlignment="center"
@@ -35,11 +36,13 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:background="@color/white"
+            android:layout_weight="2.5"
+            android:background="@drawable/main_textview_gamescreen"
+            android:paddingHorizontal="10dp"
             android:paddingTop="10dp"
             android:text="TextView"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,22 +53,22 @@
             android:background="#CCCCCC">
 
             <TextView
-                android:id="@+id/tvUserName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="TextView"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
                 android:id="@+id/tvUserLevel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/textview_game_stat"
                 android:gravity="center"
-                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvUserWeapon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/textview_game_stat"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -74,10 +77,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/textview_game_stat"
                 android:gravity="center"
-                android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/buttonUseSP"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/popup_button"
+                android:paddingHorizontal="10dp"
+                android:text="Use SP"
+                android:textColor="@color/black">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonUseHPPotion"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/popup_button"
+                android:paddingHorizontal="10dp"
+                android:text="Use HP-potion(s)"
+                android:textColor="@color/black">
+
+            </Button>
+
         </LinearLayout>
 
         <LinearLayout
@@ -86,8 +120,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_weight="3"
-            android:background="@color/white"
+            android:layout_weight="2.7"
+
             android:fadingEdge="none"
             android:orientation="vertical">
 
@@ -96,22 +130,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
+                android:background="@drawable/button_option"
                 android:onClick="button1"
-                android:text="@string/option_1" />
+                android:text="@string/option_1"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonOption2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginVertical="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
+                android:background="@drawable/button_option"
                 android:onClick="button2"
-                android:text="@string/option_2" />
+                android:text="@string/option_2"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonOption3"
@@ -120,66 +158,58 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
+                android:background="@drawable/button_option"
                 android:onClick="button3"
-                android:text="@string/option_3" />
+                android:text="@string/option_3"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonOption4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginVertical="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
+                android:background="@drawable/button_option"
                 android:onClick="button4"
-                android:text="@string/option_4" />
+                android:text="@string/option_4"
+                android:textColor="@color/black" />
         </LinearLayout>
 
-        <LinearLayout
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gs_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:background="@color/teal_700"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonCharacterSheet"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.7"
-            android:background="@color/teal_700"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_buttons"
+            android:text="@string/character"
+            android:textColor="@color/black" />
 
-            <Button
-                android:id="@+id/buttonCharacterSheet"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:onClick="goCharacterSheetScreen"
-                android:text="@string/character"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/buttonInventory"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:onClick="goInventoryScreen"
-                android:text="@string/inventroy"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/buttonGameMenu"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                android:text="@string/menu"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/buttonGameMenu"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_buttons"
+            android:text="@string/menu"
+            android:textColor="@color/black" />
     </LinearLayout>
 
 

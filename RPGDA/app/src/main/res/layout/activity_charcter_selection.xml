@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_blue"
     tools:context=".CharacterSelection">
 
     <LinearLayout
@@ -44,19 +43,21 @@
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
-            android:background="#D5E6F1"
+            android:background="@drawable/textview_character_stat"
             android:paddingStart="10dp"
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingBottom="10dp">
 
 
-            <TableRow android:layout_width="match_parent">
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border"
+                android:layout_width="match_parent">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:text="@string/level"
@@ -74,11 +75,16 @@
                     android:textSize="16sp" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="10dp">
+            <TableRow
+
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:text="@string/character_name"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -88,37 +94,57 @@
                     android:layout_width="match_parent"
                     android:layout_column="1"
                     android:padding="5dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="10dp">
-
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
                 <TextView
+                    android:layout_height="match_parent"
                     android:text="Weapon"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
 
                 <TextView
-                    android:layout_width="186dp"
+                    android:id="@+id/csWeaponName"
+                    android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/csWeaponDamage"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
             </TableRow>
 
             <TableRow
-                android:layout_width="224dp"
+                android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp">
 
                 <TextView
-                    android:layout_width="138dp"
+                    android:layout_width="match_parent"
                     android:text="@string/base_stat"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="10dp">
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
 
                 <TextView
                     android:text="@string/health_point_hp"
@@ -128,40 +154,28 @@
                 <TextView
                     android:id="@+id/csHP"
                     android:layout_width="111dp"
-                    android:text="@string/_100"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="10dp">
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
 
                 <TextView
-                    android:text="@string/mana_point_mp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/csMP"
-                    android:text="@string/_100"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-            </TableRow>
-
-            <TableRow android:layout_marginTop="10dp">
-
-                <TextView
-                    android:text="@string/strength"
+                    android:text="@string/damage"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/csStrength"
-                    android:text="@string/_10"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="10dp">
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
 
                 <TextView
                     android:text="@string/intelligence"
@@ -170,26 +184,13 @@
 
                 <TextView
                     android:id="@+id/csIntelligence"
-                    android:text="@string/_10"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="10dp">
-
-                <TextView
-                    android:text="@string/agility"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/csAgility"
-                    android:text="@string/_10"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-            </TableRow>
-
-            <TableRow android:layout_marginTop="10dp">
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
 
                 <TextView
                     android:text="@string/stat_point_sp"
@@ -198,7 +199,22 @@
 
                 <TextView
                     android:id="@+id/csSP"
-                    android:text="@string/_10"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow android:paddingVertical="2dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/textview_border">
+
+                <TextView
+                    android:id="@+id/textTotalDamage"
+                    android:text="@string/total_damage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/csTotalDamage"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </TableRow>
@@ -209,28 +225,32 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/button_option"
         android:onClick="backMenuScreenFromCS"
+        android:paddingHorizontal="10dp"
         android:text="@string/back"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonConfirm"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
         android:allowUndo="false"
+        android:background="@drawable/button_option"
         android:onClick="goGameScreen"
+        android:paddingHorizontal="10dp"
         android:text="Play"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

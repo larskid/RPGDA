@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="no.hiof.larsgh.rpgda">
+    <uses-feature android:name="android.hardware.screen.portrait"/>
 
     <application
         android:allowBackup="true"
@@ -8,13 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RPGDA">
-        <activity
-            android:name=".CharacterSheetScreen"
-            android:exported="false" />
-        <activity
-            android:name=".InventoryScreen"
-            android:exported="true" />
+        android:theme="@style/Theme.RPGDA"
+        android:screenOrientation="sensorPortrait">
         <activity
             android:name=".GameScreen"
             android:exported="true" />
